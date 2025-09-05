@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from rembg import remove
 from PIL import Image
 import io, base64
+import os 
 
 app = Flask(__name__)
 
@@ -33,4 +34,5 @@ def remove_bg():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=False)
+
 
