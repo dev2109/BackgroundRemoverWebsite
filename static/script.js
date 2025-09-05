@@ -19,10 +19,7 @@ form.addEventListener("submit", async (e) => {
     resultDiv.style.display = "none";
 
     try {
-        const response = await fetch("/remove-bg", {
-            method: "POST",
-            body: formData,
-        });
+        const response = await fetch(window.location.origin + "/remove-bg", { method: "POST", body: formData });
 
         if (!response.ok) throw new Error("Request failed");
 
@@ -53,3 +50,4 @@ resetBtn.addEventListener("click", () => {
     fileInput.value = "";
     outputImg.src = "";
 });
+
